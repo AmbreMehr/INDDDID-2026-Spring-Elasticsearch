@@ -1,3 +1,10 @@
 spring:
   application:
     name: 2026.elasticsearch
+
+elk:
+  username: elastic
+  1:
+    password: indddid2026
+  2:
+    password: indddid2026
