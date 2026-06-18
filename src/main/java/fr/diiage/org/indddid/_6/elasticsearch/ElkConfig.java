@@ -12,11 +12,8 @@ public class ElkConfig {
     @Value("${elk.username}")
     private String elkUsername;
 
-    @Value("${elk.1.password}")
-    private String elk1Password;
-
-    @Value("${elk.2.password}")
-    private String elk2Password;
+    @Value("${elk.password}")
+    private String elkPassword;
 
     private ElasticsearchClient elkClientMaker(
         String host,
@@ -30,20 +27,20 @@ public class ElkConfig {
 
     @Bean
     @Primary
-    public ElasticsearchClient elkClient1Build() {
+    public ElasticsearchClient elkClient1() {
         return elkClientMaker(
             "http://localhost:9200",
             elkUsername,
-            elk1Password
+            elkPassword
         );
     }
 
     @Bean
-    public ElasticsearchClient elkClient2Run() {
+    public ElasticsearchClient elkClient2() {
         return elkClientMaker(
             "http://localhost:9201",
             elkUsername,
-            elk2Password
+            elkPassword
         );
     }
 }

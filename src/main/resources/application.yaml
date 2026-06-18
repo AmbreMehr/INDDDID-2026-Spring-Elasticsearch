@@ -2,9 +2,13 @@ spring:
   application:
     name: 2026.elasticsearch
 
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
 elk:
+  host: localhost
   username: elastic
-  1:
-    password: indddid2026
-  2:
-    password: indddid2026
+  password: indddid2026
+  security-enabled: false
